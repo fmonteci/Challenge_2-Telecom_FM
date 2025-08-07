@@ -19,7 +19,7 @@ df=pd.DataFrame(resultado)
 🔧 Proceso de normalización
 El archivo contenía varias columnas con estructuras anidadas (customer, phone, internet, account), por lo cual se aplicó json_normalize para aplanar los datos y luego se concatenaron.
 
-🧼 Etapas de limpieza
+### 🧼 Etapas de limpieza
 Eliminación de duplicados
 
 Transformación de datos tipo string a valores numéricos binarios
@@ -30,7 +30,7 @@ Estándar en los textos: minúsculas, sin espacios extra, sin valores vacíos
 
 Creación de nuevas variables como Cuentas_Diarias (gasto mensual dividido por 30)
 
-📌 Proceso de Transformacion
+### 📌 Proceso de Transformacion
 Antes:
 📷 <img width="1802" height="198" alt="image" src="https://github.com/user-attachments/assets/93cc45d6-e809-4cc0-83b1-60b506d0f93d" />
 
@@ -38,7 +38,7 @@ Después:
 <img width="1355" height="258" alt="image" src="https://github.com/user-attachments/assets/f892c7ea-a2a1-4a0f-9374-464eb3837e2f" />
 
 
-🔍 Análisis Exploratorio (EDA)
+## 🔍 Análisis Exploratorio (EDA)
 📊 Estadísticas generales
 El 49.42% de los clientes son mujeres.
 
@@ -68,7 +68,7 @@ Alta dispersión en: SeniorCitizen, Churn, Dependents
 📈 Heatmap de correlación entre variables numéricas
 
 
-📌 Insights Relevantes **complementar**
+## 📌 Insights Relevantes **complementar**
 Clientes nuevos tienen más probabilidad de irse: Se observa una correlación negativa entre tenure y Churn (-0.35).
 Alrededor del 55% de los clientes que se dan de bajan se encuentran en 2 segmentos:
    :star: El primer segmento: Hombres, con contrato mes a mes y facturacion electronica
@@ -78,7 +78,7 @@ de lo anterior se desprende que el churn no se relaciona fuertemente con el gast
 <img width="571" height="660" alt="image" src="https://github.com/user-attachments/assets/eae8d567-015f-4766-82e6-7c5bba1151c3" />
 
 
-📑 Recomendaciones Estratégicas
+## 📑 Recomendaciones Estratégicas
 Basadas en los análisis y visualizaciones, se sugiere:
 
 ✅ 1. Fortalecer programas de fidelización para nuevos clientes
