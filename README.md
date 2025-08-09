@@ -166,18 +166,29 @@ de lo anterior se desprende que el churn no se relaciona fuertemente con el gast
 
 <img width="571" height="660" alt="image" src="https://github.com/user-attachments/assets/eae8d567-015f-4766-82e6-7c5bba1151c3" />
 
+Caracteristicas de los clientes que abandonan (Churn yes=1, Female=1; senior citizen yes=1, partner yes=1, dependents yes=1, phoneService yes=1, paperlessBilling yes=1)
+* 50,24% son mujeres
+* 25,47% son ciudadanos senior
+* 35,79% tienen pareja
+* 17,98% tienen dependientes
+* 18 meses de permanencia promedio
+* gasto promedio mensual de 74 dolares
+
+<img width="1026" height="246" alt="image" src="https://github.com/user-attachments/assets/b9499d8a-e56b-4727-9736-7a80d2a1f5db" />
+
 
 ## 📑 Recomendaciones Estratégicas
 
 Basado en los análisis y visualizaciones, se sugiere:
 
 ✅ 1. Fortalecer programas de fidelización para nuevos clientes
-Intervenir activamente en los primeros 12 meses de permanencia.
+Intervenir activamente en los primeros 18 meses de permanencia.
 
 Ofrecer bonos o descuentos progresivos para contratos largos.
 
 ✅ 2. Incentivar contratos anuales o bianuales
-El churn es considerablemente menor entre quienes tienen contratos largos.
+El churn es considerablemente menor entre quienes tienen contratos largos. El promedio de estancia de los clientes que abandonan es de 18 meses.
+Ofrecer planes a costo reducidos para periodos puperiores de 18 meses, planes asociados a ventas de equipos con cuota mensual plazo 24 meses
 
 Agregar beneficios exclusivos a clientes con mayor tenure. El costo de traer un nuevo cliente es aprox entre 5 a 7 veces el costo de retener a un cliente
 
@@ -185,9 +196,11 @@ Agregar beneficios exclusivos a clientes con mayor tenure. El costo de traer un 
 Clientes que pagan con cheques electronicos presentan mayor abandono, ofrecer descuentos por pago con tarjeta de crédito.
 Ogfrecer servicios complementarios a bajo costo para aumentar fidelización.
 
+✅ 4. Publicidad
+Definir como publico objetivo ciudadnos jovenes (no senior) solteros isn dependientes, ofreciendo planes flexibles
 
+📊 Tablas y gráficos complementarios
 
-📊 Tablas y gráficos complementarios sugeridos
 **Conculta SQL para obtención de evasión por variables categóricas, usada análisis de variable categórica **
 ```
 query="Select iif(gender=1,'F','M') as 'Género', Contract as 'T_Contrato', PaymentMethod as 'Met._Pago', sum(Churn) as 'Clientes_abandono', round(100*sum(churn)/(select count(*) from df_normalizado where Churn=1),2) as '%_Clientes_Abandono' from df_normalizado where Churn=1 group by gender, Contract,PaymentMethod"
@@ -198,7 +211,7 @@ df_sql_recuento
 <img width="599" height="662" alt="image" src="https://github.com/user-attachments/assets/bfa9238b-035e-45d5-87c0-06582ea9e505" />
 
 
-📊 **HeatMap Correlación Variables Numéricas**
+# 📊 **HeatMap Correlación Variables Numéricas**
 
 ```
 plt.figure(figsize=(8, 6))
