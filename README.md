@@ -16,7 +16,7 @@ Los datos fueron obtenidos desde una API en formato `.json` y transformados en u
 datos=requests.get("https://raw.githubusercontent.com/ingridcristh/challenge2-data-science-LATAM/refs/heads/main/TelecomX_Data.json")
 resultado=json.loads(datos.text)
 df=pd.DataFrame(resultado)
-![Datos json raw](https://github.com/fmonteci/Challenge_2-Telecom_FM/blob/ccf0d657602f3b13bc5e412315215902f6e056be/001%20Ch2.png)
+![Datos json raw](https://raw.githubusercontent.com/fmonteci/Challenge_2-Telecom_FM/main/001%20Ch2.png)
 
 
 🔧 Proceso de normalización
