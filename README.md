@@ -16,8 +16,8 @@ datos=requests.get("https://raw.githubusercontent.com/ingridcristh/challenge2-da
 resultado=json.loads(datos.text)
 df=pd.DataFrame(resultado)
 ```
+![imagen1](images/001.png)
 
-<img width="1700" height="198" alt="Datos Json" src=https://raw.githubusercontent.com/fmonteci/Challenge_2-Telecom_FM/main/001%20Ch2.png />
 
 
 🔧 **Proceso de normalización**
@@ -39,7 +39,8 @@ df_normalizado.duplicated().sum()
 ```
 df_normalizado.isnull().sum()
 ```
-<img width="148" height="400" alt="image" src="https://github.com/user-attachments/assets/1d0b12bd-3843-466a-af38-9d44e821b59b" />
+![imagen2](images/002.png)
+
 
 * Valores Unicos de cada variable
 ```
@@ -58,7 +59,8 @@ df_normalizado.isnull().sum()
 
 👁️‍🗨️ Muestra
 
-<img width="515" height="656" alt="image" src="https://github.com/user-attachments/assets/29e5b817-7687-44d3-ad65-65a229d0bbaa" />
+![imagen](images/003.png)
+
    
 * Transformación de datos tipo string a valores numéricos binarios
 ```
@@ -83,15 +85,16 @@ for i in df_normalizado.columns:
 df_normalizado["Cuentas_Diarias"]=df_normalizado["Charges.Monthly"]/30
 df_normalizado.sample(10)
 ```
-<img width="1700" height="221" alt="image" src="https://github.com/user-attachments/assets/034f7845-b34a-419e-8a2c-15a6254eca0a" />
+
+![imagen4](images/004.png)
+
 
 ### 📌 **Resultados del Proceso de Transformacion**
 Antes:
-📷 <img width="1700" height="198" alt="Antes" src="https://github.com/user-attachments/assets/93cc45d6-e809-4cc0-83b1-60b506d0f93d" />
+📷 ![imagen5](images/005.png)
 
 Después: 
-<img width="1700" height="258" alt="Después" src="https://github.com/user-attachments/assets/f892c7ea-a2a1-4a0f-9374-464eb3837e2f" />
-
+![imagen6](images/006.png)
 
 ## 🔍 **Análisis Exploratorio (EDA)**
 📊 Estadísticas generales
@@ -103,7 +106,7 @@ Después:
 - 90,27% de la muestra tiene servicio telefonico
 - 59,32% de la muestra recibe boleta electronica
 
-<img width="1073" height="299" alt="image" src="https://github.com/user-attachments/assets/1590b447-fcd5-4bb9-b1e3-214b885d9cdc" />
+![imagen7](images/007.png)
 
 
 🎯 Coeficiente de variación
@@ -112,11 +115,11 @@ Después:
 
 ❕ Baja dispersión en las variables: Charges.Monthly (46.55%), PhoneService (32.83%), Cuentas_Diarias (46.55%)
 
-<img width="375" height="494" alt="Coef. Dispersion" src="https://github.com/user-attachments/assets/431a45aa-6e89-40a1-997a-6f8a93e21320" />
+![imagen8](images/008.png)
 
 📈 Boxplot: en busqueda de outliers, por reglas de IQR no se aprecian outliers 
-<img width="552" height="435" alt="image" src="https://github.com/user-attachments/assets/ed5e6dec-189f-46ed-8759-d3629305102a" />
-<img width="543" height="435" alt="image" src="https://github.com/user-attachments/assets/aa737611-14eb-48e7-8597-3111282a9d6d" />
+![imagen9](images/009.png)
+![imagen10](images/010.png)
 
 
 📈 Histograma de Charges.Monthly
@@ -124,13 +127,13 @@ Después:
 
 🔔 El gasto con mayor frecuencia es el de 20 doláres, luego se aprecia una concentración entre 70 y 100 doláres
 
-<img width="560" height="435" alt="image" src="https://github.com/user-attachments/assets/37dfd67b-93b5-4969-ada7-bb03f88a3d27" />
+![imagen11](images/011.png)
 
 📈 Distribución de clientes según estatus en la compañia (clientes retenidos vs. dados de baja)
 
 ❗**la proporci´pn de clientes que abandonan corresponde a un 26,5% del total, equivale a 1.869 clientes**
 
-<img width="1722" height="430" alt="image" src="https://github.com/user-attachments/assets/73c28df6-0f7a-4cd5-af90-b097ba2edbd4" />
+![imagen12](images/012.png)
 
 📈 Heatmap de correlación entre variables categóricas
 
@@ -152,7 +155,7 @@ fig = px.density_heatmap(
 fig.update_coloraxes(colorbar_title="% abandono")
 fig.show()
 ```
-<img width="1820" height="393" alt="image" src="https://github.com/user-attachments/assets/14c559f9-d48f-4149-850e-9bbe904c700b" />
+![imagen13](images/013.png)
 
 ## 📌 Insights Relevantes 
 Clientes nuevos tienen más probabilidad de irse: Se observa una correlación negativa entre tenure y Churn (-0.35).
@@ -164,7 +167,7 @@ Alrededor del 55% de los clientes que se dan de bajan se encuentran en 2 segment
    
 de lo anterior se desprende que el churn no se relaciona fuertemente con el gasto mensual, pero sí con la permanenciay los clientes con menor compromiso (contratos mensuales, sin servicios múltiples) tienden a abandonar más.
 
-<img width="571" height="660" alt="image" src="https://github.com/user-attachments/assets/eae8d567-015f-4766-82e6-7c5bba1151c3" />
+![imagen14](images/014.png)
 
 Caracteristicas de los clientes que abandonan (Churn yes=1, Female=1; senior citizen yes=1, partner yes=1, dependents yes=1, phoneService yes=1, paperlessBilling yes=1)
 * 50,24% son mujeres
@@ -174,7 +177,7 @@ Caracteristicas de los clientes que abandonan (Churn yes=1, Female=1; senior cit
 * 18 meses de permanencia promedio
 * gasto promedio mensual de 74 dolares
 
-<img width="1026" height="246" alt="image" src="https://github.com/user-attachments/assets/b9499d8a-e56b-4727-9736-7a80d2a1f5db" />
+![imagen15](images/015.png)
 
 
 ## 📑 Recomendaciones Estratégicas
@@ -208,7 +211,7 @@ df_sql_recuento=pd.read_sql(query,con=engine)
 df_sql_recuento
 ```
 👀
-<img width="599" height="662" alt="image" src="https://github.com/user-attachments/assets/bfa9238b-035e-45d5-87c0-06582ea9e505" />
+![imagen16](images/016.png)
 
 
 # 📊 **HeatMap Correlación Variables Numéricas**
@@ -219,7 +222,7 @@ sns.heatmap(df_corr, annot=True, fmt=".2f", cmap="coolwarm", square=True, linewi
 plt.title("Mapa de correlación entre variables numéricas")
 plt.show()
 ```
-<img width="642" height="564" alt="image" src="https://github.com/user-attachments/assets/0434232c-19e0-4dc5-a059-4e29fabbf835" />
+![imagen17](images/017.png)
 
 
 🧾 Conclusión
